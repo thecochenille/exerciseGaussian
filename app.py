@@ -74,8 +74,8 @@ def create_histogram(data):
 
 def create_plot(data):
     plt.figure(figsize=(5, 3))
-    plt.plot(final_pval['log p_value'],final_pval['n_sample'])
-    plt.axvline(x=-np.log10(0.05), color='r', linestyle='--', label=f'Threshold: {-np.log10(0.05)}')
+    plt.plot(final_pval['n_sample'],final_pval['log p_value'])
+    plt.axhline(y=-np.log10(0.05), color='r', linestyle='--', label=f'Threshold: {-np.log10(0.05)}')
 
     plt.title("Shapiro-Wilk p-value by sample size")
     plt.xlabel("Sample size")
